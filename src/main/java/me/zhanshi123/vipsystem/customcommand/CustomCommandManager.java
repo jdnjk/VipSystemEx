@@ -7,7 +7,6 @@ public class CustomCommandManager {
     private Map<String, CustomCommand> data = new HashMap<>();
 
     public void add(CustomCommand customCommand) {
-        data.remove(customCommand.getVip());
         data.put(customCommand.getVip(), customCommand);
     }
 

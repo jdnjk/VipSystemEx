@@ -35,6 +35,7 @@ public class GiveCommand extends SubCommand implements PermissionCommand, TabCom
             sender.sendMessage(MessageManager.getString("Command.give.invalidTime"));
             return true;
         }
+        args[2] = args[2].toLowerCase();
         VipData vipData = VipSystemAPI.getInstance().getVipManager().getVipData(player);
         if (vipData != null) {
             if (!vipData.getVip().equalsIgnoreCase(args[2])) {
