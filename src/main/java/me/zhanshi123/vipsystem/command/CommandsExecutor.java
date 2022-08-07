@@ -75,6 +75,7 @@ public class CommandsExecutor implements CommandExecutor, TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
         if (args.length == 1) {
             return Main.getCommandHandler().getCommands().stream()
+                    .filter(subCommand -> subCommand.hasPermission(sender))
                     .map(SubCommand::getName)
                     .filter(str -> str.startsWith(args[0]))
                     .collect(Collectors.toList());
@@ -82,6 +83,9 @@ public class CommandsExecutor implements CommandExecutor, TabCompleter {
             String commandName = args[0];
             SubCommand subCommand = Main.getCommandHandler().getSubCommand(commandName);
             if (commandName == null) {
+                return new ArrayList<>();
+            }
+            if (!subCommand.hasPermission(sender)) {
                 return new ArrayList<>();
             }
             if (!(subCommand instanceof TabCompletable)) {
