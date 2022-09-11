@@ -35,7 +35,7 @@ public class ConfigManager {
             dateFormat = new SimpleDateFormat(Objects.requireNonNull(config.getString("dateFormat")));
             ConfigurationSection customCommands = config.getConfigurationSection("customCommands");
             if (customCommands != null) {
-                customCommands.getKeys(false).forEach(group -> Main.getCustomCommandManager().add(new CustomCommand(group, customCommands.getStringList(group + ".activate"), customCommands.getStringList(group + ".expire"))));
+                customCommands.getKeys(false).forEach(group -> Main.getCustomCommandManager().add(new CustomCommand(group.toLowerCase(), customCommands.getStringList(group + ".activate"), customCommands.getStringList(group + ".expire"))));
             }
         } catch (Exception e) {
             e.printStackTrace();
