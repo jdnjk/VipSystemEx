@@ -111,8 +111,7 @@ svip组同理，如果你有更多的vip种类，可以按照上方格式自行�
 ![https://www.zhanshi123.me/wp-content/uploads/2020/02/1.png](https://www.zhanshi123.me/wp-content/uploads/2020/02/1.png)  
 具体编辑的方法可以查看 [https://www.zhanshi123.me/?p=320](https://www.zhanshi123.me/?p=320)  
 上图的功能你可以直接前往[https://www.mcbbs.net/thread-959456-1-1.html](https://www.mcbbs.net/thread-959456-1-1.html)进行下载
-## 插件下载
-该插件为免费插件，但是不提供jar的直接下载地址  
+## 插件下载  
 你可以clone/fork该项目并自行构建，只需安装maven后进入项目目录，输入```mvn install```即可自动完成构建。目标文件会生成在```/target```目录下  
 如果你没有自行构建的能力，你可以联系作者支付￥20作为赞助，并由作者提供构建后的文件
 所有支付的款项都是对作者开发极大的支持!
